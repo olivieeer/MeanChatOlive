@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('chatApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute',
-  'btford.socket-io'
-])
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute',
+    'btford.socket-io'
+  ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
@@ -44,14 +44,14 @@ angular.module('chatApp', [
       .otherwise({
         redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
 
     // Intercept 401s and redirect you to login
-    $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
+    $httpProvider.interceptors.push(['$q', '$location', function ($q, $location) {
       return {
-        'responseError': function(response) {
-          if(response.status === 401) {
+        'responseError': function (response) {
+          if (response.status === 401) {
             $location.path('/login');
             return $q.reject(response);
           }

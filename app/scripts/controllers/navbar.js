@@ -2,9 +2,9 @@
 
 angular.module('chatApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth, mySocket) {
-    $scope.logout = function() {
+    $scope.logout = function () {
       Auth.logout()
-        .then(function() {
+        .then(function () {
           // Reconnect to socket as guest
           mySocket.reconnect();
 

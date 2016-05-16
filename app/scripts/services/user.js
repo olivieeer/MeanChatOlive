@@ -12,8 +12,8 @@ angular.module('chatApp')
       get: {
         method: 'GET',
         params: {
-          id:'me'
+          id: 'me'
         }
       }
-	  });
+    });
   });

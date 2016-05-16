@@ -6,7 +6,7 @@ angular.module('chatApp')
     $scope.getVisitors = chatroom.getVisitors;
 
     $scope.sendMessage = function () {
-      if(!$scope.newMessage) {
+      if (!$scope.newMessage) {
         return;
       }
       chatroom.sendMessage($scope.newMessage);

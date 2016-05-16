@@ -6,8 +6,8 @@ angular.module('chatApp')
     var visitors = [];
 
     // asynchronously trigger scroll to bottom
-    var scrollToBottom = function() {
-      $timeout(function() {
+    var scrollToBottom = function () {
+      $timeout(function () {
         $rootScope.$broadcast('event:scroll');
       });
     };
@@ -36,7 +36,7 @@ angular.module('chatApp')
 
       // if user closed connection somewhere else
       // reconnect to see if he's still logged in
-      if(data.user._id === $rootScope.currentUser._id) {
+      if (data.user._id === $rootScope.currentUser._id) {
         mySocket.reconnect();
       }
     });
@@ -49,16 +49,16 @@ angular.module('chatApp')
 
     // Public API here
     return {
-      getMessages: function() {
+      getMessages: function () {
         return messages;
       },
-      getVisitors: function() {
+      getVisitors: function () {
         return visitors;
       },
-      sendMessage: function(message) {
-        mySocket.emit( 'message', { body: message } );
+      sendMessage: function (message) {
+        mySocket.emit('message', {body: message});
         // push message locally
-        messages.push( { body: message, author: $rootScope.currentUser, date: Date.now() });
+        messages.push({body: message, author: $rootScope.currentUser, date: Date.now()});
         scrollToBottom();
       }
     };

@@ -10,7 +10,7 @@ angular.module('chatApp')
       restrict: 'A',
       link: function (scope, element, attrs) {
         var event = attrs.autoScroll;
-        scope.$on(event, function() {
+        scope.$on(event, function () {
           var firstChild = element.children().eq(0);
           element.scrollTop(firstChild.height());
         });

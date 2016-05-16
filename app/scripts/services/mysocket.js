@@ -2,15 +2,15 @@
 'use strict';
 
 angular.module('chatApp')
-  .factory('mySocket', function(socketFactory) {
+  .factory('mySocket', function (socketFactory) {
     var socket = io.connect();
 
     var wrappedSocket = socketFactory({
       ioSocket: socket
     });
 
-    wrappedSocket.reconnect = function() {
-      if(socket.socket.connected) {
+    wrappedSocket.reconnect = function () {
+      if (socket.socket.connected) {
         socket.socket.disconnect();
         socket.socket.connect();
       } else {
@@ -18,11 +18,11 @@ angular.module('chatApp')
       }
     };
 
-    wrappedSocket.disconnect = function() {
+    wrappedSocket.disconnect = function () {
       socket.socket.disconnect();
     };
 
-    wrappedSocket.connect = function() {
+    wrappedSocket.connect = function () {
       socket.socket.connect();
     };
 
