@@ -1,9 +1,9 @@
 'use strict';
 
 var express = require('express'),
-    path = require('path'),
-    fs = require('fs'),
-    mongoose = require('mongoose');
+  path = require('path'),
+  fs = require('fs'),
+  mongoose = require('mongoose');
 
 /**
  * Main application file
@@ -28,8 +28,8 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 var passport = require('./lib/config/passport');
 
 var app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
+  server = require('http').createServer(app),
+  io = require('socket.io').listen(server);
 
 // Express settings
 var expressConfig = require('./lib/config/express');

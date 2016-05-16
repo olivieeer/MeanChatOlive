@@ -5,10 +5,12 @@
     <div class="page-container">
       <div class="row">
         <div class=" col-sm-offset-2 col-sm-6  col-sm-offset-2">
-        <H3>Profile Utilisateur</H3>
-          <form class="form-horizontal" name="form" ng-submit="changePassword(form)" novalidate style="border: 1px solid red">
-          
-            <h3>Email : {{currentUser.email}}  -- name : {{currentUser.name}} -- name : {{user.name}} -- pasword:  {{user.password}}</h3>
+          <H3>Profile Utilisateur</H3>
+          <form class="form-horizontal" name="form" ng-submit="changePassword(form)" novalidate
+                style="border: 1px solid red">
+
+            <h3>Email : {{currentUser.email}} -- name : {{currentUser.name}} -- name : {{user.name}} -- pasword:
+              {{user.password}}</h3>
 
             <div class="form-group col-sm-5 col-lg-5">
               <label>User Name</label>
@@ -17,7 +19,7 @@
               <p class="help-block" ng-show="form.name.$error.mongoose">
               </p>
             </div>
-           <div class="form-group col-sm-5 col-lg-5">
+            <div class="form-group col-sm-5 col-lg-5">
               <label>email</label>
 
               <input type="text" name="email" class="form-control" mongoose-error="" ng-model="currentUser.email">
@@ -30,7 +32,7 @@
               <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
                      mongoose-error/>
               <p class="help-block" ng-show="form.password.$error.mongoose">
-                  {{ errors.other }}
+                {{ errors.other }}
               </p>
             </div>
 
@@ -53,66 +55,71 @@
         </div>
       </div>
 
-           <div class="row col-sm-12">
-          <div class="col-sm-2">
-            <nav>
-              <div ng-include="'partials/menu'"></div>
-            </nav>
-          </div>
-          <div class="col-sm-offset-2 col-sm-4">
+      <div class="row col-sm-12">
+        <div class="col-sm-2">
+          <nav>
+            <div ng-include="'partials/menu'"></div>
+          </nav>
+        </div>
+        <div class="col-sm-offset-2 col-sm-4">
 
-            <form class="form" name="form" novalidate="" enctype="multipart/form-data">
+          <form class="form" name="form" novalidate="" enctype="multipart/form-data">
 
-              <div class="row">
-                <label for="fileToUpload">Select a File to Upload</label><br>
-                <input type="file" ng-model-instant="" id="fileToUpload" multiple="multiple" onchange="angular.element(this).scope().setFiles(this)">
-              </div>
-              <div id="dropbox" class="dropbox" ng-class="dropClass"><span>{{dropText}}</span></div>
-              <div ng-show="files.length">
-                <div ng-repeat="file in files.slice(0)">
-                  <span>{{file.webkitRelativePath || file.name}}</span>
-                  (<span ng-switch="file.size > 1024*1024">
+            <div class="row">
+              <label for="fileToUpload">Select a File to Upload</label><br>
+              <input type="file" ng-model-instant="" id="fileToUpload" multiple="multiple"
+                     onchange="angular.element(this).scope().setFiles(this)">
+            </div>
+            <div id="dropbox" class="dropbox" ng-class="dropClass"><span>{{dropText}}</span></div>
+            <div ng-show="files.length">
+              <div ng-repeat="file in files.slice(0)">
+                <span>{{file.webkitRelativePath || file.name}}</span>
+                (<span ng-switch="file.size > 1024*1024">
                 <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
                 <span ng-switch-default="">{{file.size / 1024 | number:2}} kB</span>
             </span>)
-                </div>
-                <input type="button" ng-click="uploadFile()" value="Upload">
-                <div ng-show="progressVisible">
-                  <div class="percent">{{progress}}%</div>
-                  <div class="progress-bar">
-                    <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
-                  </div>
+              </div>
+              <input type="button" ng-click="uploadFile()" value="Upload">
+              <div ng-show="progressVisible">
+                <div class="percent">{{progress}}%</div>
+                <div class="progress-bar">
+                  <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
                 </div>
               </div>
+            </div>
 
 
-               <div class="form-group">
-                  <label>New Password</label>
+            <div class="form-group">
+              <label>New Password</label>
 
-                  <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword" ng-minlength="3" required="">
-                  <p class="help-block" ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
-                    Password must be at least 3 characters.
-                  </p>
-                </div>
+              <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+                     ng-minlength="3" required="">
+              <p class="help-block"
+                 ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
+                Password must be at least 3 characters.
+              </p>
+            </div>
 
-                <p class="help-block"> {{ message }} </p>
-                <br>Photo:
-                <input type="file" ngf-select="" ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required="" ngf-model-invalid="errorFiles">
-                <i ng-show="form.file.$error.required">*required</i><br>
-                <i ng-show="form.file.$error.maxSize">File too large
-                  {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
-                <img ng-show="form.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
-                <br>
-                <button ng-disabled="!form.$valid" ng-click="uploadPic(picFile)">Submit</button>
+            <p class="help-block"> {{ message }} </p>
+            <br>Photo:
+            <input type="file" ngf-select="" ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB"
+                   required="" ngf-model-invalid="errorFiles">
+            <i ng-show="form.file.$error.required">*required</i><br>
+            <i ng-show="form.file.$error.maxSize">File too large
+              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+            <img ng-show="form.file.$valid" ngf-thumbnail="picFile" class="thumb">
+            <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+            <br>
+            <button ng-disabled="!form.$valid" ng-click="uploadPic(picFile)">Submit</button>
                 <span class="progress" ng-show="picFile.progress >= 0">
                   <div style="width:{{picFile.progress}}%" ng-bind="picFile.progress + '%'"></div>
                 </span>
-                <span ng-show="picFile.result">Upload Successful</span>
-                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-                <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
-            </form>
-          </div>
+            <span ng-show="picFile.result">Upload Successful</span>
+            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+            <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+          </form>
         </div>
+      </div>
     </div>
   </div>
   </div>

@@ -1,29 +1,33 @@
 <section class="chat-app" ng-controller="BudgetCtrl" ng-init="values.first = 1">
   <div ng-include="'partials/navbar'"></div>
-  <div w3-include-html="/partials/navbar.html"></div> 
+  <div w3-include-html="/partials/navbar.html"></div>
   <div ng-include="'/partials/navbar.html'"></div>
   <div class="main container-fluid">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
         <form class="form-horizontal well">
           <fieldset>
-            <legend>Budget </legend>
+            <legend>Budget</legend>
             <div class="form-group">
               <div class="col-md-4">
-                <input type="number" ng-model="values.first" ng-change="doCalculations(sign, values.first, values.second)">
+                <input type="number" ng-model="values.first"
+                       ng-change="doCalculations(sign, values.first, values.second)">
                 <select ng-model="sign" ng-change="doCalculations(sign, values.first, values.second)">
                   <option value="+">+
                   <option value="-">-
                   <option value="*">*
                   <option value="/">/
                 </select>
-                <input type="number" ng-model="values.second" ng-change="doCalculations(sign, values.first, values.second)">
+                <input type="number" ng-model="values.second"
+                       ng-change="doCalculations(sign, values.first, values.second)">
                 = {{result}}
-                <input id="rentreeLabel" name="rentreeLabel" class="form-control col-md-4" placeholder="Entrez une Rentrée" type="text">
+                <input id="rentreeLabel" name="rentreeLabel" class="form-control col-md-4"
+                       placeholder="Entrez une Rentrée" type="text">
               </div>
               <div class="col-md-4">
                 <div class="input-group">
-                  <input id="rentreeMontant" name="rentreeMontant" ng-model="montantTotal" class="form-control" placeholder="montant" type="number">
+                  <input id="rentreeMontant" name="rentreeMontant" ng-model="montantTotal" class="form-control"
+                         placeholder="montant" type="number">
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                       Save
@@ -42,11 +46,13 @@
             <!-- Button Drop Down -->
             <div class="form-group">
               <div class="col-md-4">
-                <input id="depenseLabel" name="depenseLabel" class="form-control col-md-4" placeholder="Entrez une Dépense" type="text">
+                <input id="depenseLabel" name="depenseLabel" class="form-control col-md-4"
+                       placeholder="Entrez une Dépense" type="text">
               </div>
               <div class="col-md-4">
                 <div class="input-group">
-                  <input id="DepenseMontant" name="DepenseMontant" class="form-control" placeholder="montant" type="number">
+                  <input id="DepenseMontant" name="DepenseMontant" class="form-control" placeholder="montant"
+                         type="number">
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                       Save
@@ -69,7 +75,7 @@
                 <textarea class="form-control" id="textarea" name="textarea">Entrez une Remarque</textarea>
               </div>
             </div>
-            montant : {{ montantTotal   }}
+            montant : {{ montantTotal }}
             <!-- Button (Double) -->
             <div class="form-group">
 

@@ -1,4 +1,5 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <header ng-controller="NavbarCtrl">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -22,7 +23,8 @@
             <ul class="dropdown-menu">
               <li><a ng-href="#/javascript">Javascript</a></li>
               <li><a ng-href="#/nodejs">Node.js</a></li>
-            </ul></li>
+            </ul>
+          </li>
           <li class="dropdown"><a class="dropdown-toggle"
                                   data-toggle="dropdown" href="#">AngularJs <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -32,7 +34,8 @@
               <li><a ng-href="#/animations">Animations</a></li>
               <li><a ng-href="#/accordion">accordion</a></li>
               <li><a ng-href="#/craEcranB">Cra</a></li>
-            </ul></li>
+            </ul>
+          </li>
           <li class="dropdown"><a class="dropdown-toggle"
                                   data-toggle="dropdown" ng-href="#/budget">Budget<span
             class="caret"></span></a>
@@ -41,17 +44,22 @@
               <li><a ng-href="#/jquery">JQuery</a></li>
               <li><a ng-href="#/html">Html5</a></li>
               <li><a ng-href="#/css">CSS3</a></li>
-            </ul></li>
+            </ul>
+          </li>
 
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#/signup" ng-hide="Auth.isLoggedIn()"><span
             class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#/budget" ng-show="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>budget</a></li>
-          <li><a href="#/settings" ng-show="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>Settings</a></li>
-          <li><a href="#/login" ng-hide="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-          <li><a href="" ng-click="logout()"  ng-show="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+          <li><a href="#/budget" ng-show="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>budget</a>
+          </li>
+          <li><a href="#/settings" ng-show="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>Settings</a>
+          </li>
+          <li><a href="#/login" ng-hide="Auth.isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+          <li><a href="" ng-click="logout()" ng-show="Auth.isLoggedIn()"><span
+            class="glyphicon glyphicon-log-in"></span>Logout</a></li>
         </ul>
       </div>
     </div>

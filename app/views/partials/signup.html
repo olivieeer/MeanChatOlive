@@ -10,7 +10,8 @@
                                                 'has-error': form.name.$invalid && submitted }">
               <label>Name</label>
 
-              <input type="text" name="name" class="form-control" ng-model="user.name" required="" mongoose-error="" autofocus="">
+              <input type="text" name="name" class="form-control" ng-model="user.name" required="" mongoose-error=""
+                     autofocus="">
               <p class="help-block" ng-show="form.name.$error.required && submitted">
                 A name is required
               </p>
@@ -39,8 +40,10 @@
                                                 'has-error': form.password.$invalid && submitted }">
               <label>Password</label>
 
-              <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3" required="" mongoose-error="">
-              <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+              <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3"
+                     required="" mongoose-error="">
+              <p class="help-block"
+                 ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
                 Password must be at least 3 characters.
               </p>
               <p class="help-block" ng-show="form.password.$error.mongoose">

@@ -11,7 +11,7 @@ describe('Service: chatroom', function () {
     var mockSocket = new SocketMock();
 
     module(function ($provide) {
-        $provide.value('mySocket', mockSocket);
+      $provide.value('mySocket', mockSocket);
     });
   });
 
@@ -25,20 +25,20 @@ describe('Service: chatroom', function () {
   });
 
   /*
-  Mock for socket.io
+   Mock for socket.io
    */
-  var SocketMock = function($rootScope){
+  var SocketMock = function ($rootScope) {
 
-    this.reconnect = function() {
+    this.reconnect = function () {
     };
 
-    this.on = function(eventName, callback){
+    this.on = function (eventName, callback) {
     };
 
-    this.emit = function(eventName){
+    this.emit = function (eventName) {
     };
 
-    this.receive = function(eventName){
+    this.receive = function (eventName) {
     };
   };
 });

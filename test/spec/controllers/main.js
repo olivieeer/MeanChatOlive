@@ -8,7 +8,7 @@ describe('Controller: MainCtrl', function () {
   var MainCtrl,
     scope;
 
-  beforeEach(inject(function($controller, $rootScope){
+  beforeEach(inject(function ($controller, $rootScope) {
     //create an empty scope
     scope = $rootScope.$new();
 

@@ -2,14 +2,16 @@
   <div ng-include="'partials/navbar'"></div>
   <div class="main container-fluid">
     <div class="chat row">
-       <div class="col-sm-offset-2 col-sm-2">
-      <aside>User en ligne
-        <ul class="list-group">
-          <li class="list-group-item" ng-repeat="visitor in getVisitors()">
-            <div class="name" ng-class="{'me':currentUser.name == visitor.name}"><span class="glyphicon glyphicon-user">&nbsp;&nbsp;&nbsp;</span>{{ visitor.name }}</div>
-          </li>
-        </ul>
-      </aside>
+      <div class="col-sm-offset-2 col-sm-2">
+        <aside>User en ligne
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="visitor in getVisitors()">
+              <div class="name" ng-class="{'me':currentUser.name == visitor.name}"><span
+                class="glyphicon glyphicon-user">&nbsp;&nbsp;&nbsp;</span>{{ visitor.name }}
+              </div>
+            </li>
+          </ul>
+        </aside>
       </div>
       <div class="col-sm-5">
         <section auto-scroll="event:scroll">
@@ -20,15 +22,18 @@
                 <!--<div class="author" ng-class="{'me':currentUser.name == message.author.name}">{{ message.author.name }}</div>
                 <div class="date">{{ message.date | date: 'h:mm' }}</div>
                 <div class="body">{{ message.body }}</div> <br />-->
-                {{ message.date | date: 'dd MMM h:mm' }} -- <span style="color: grey; font-size: 1.2em;"><strong>{{message.author.name }} </strong></span> a écrit : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #AA3939; font-size: 1.2em" class="center"><strong>{{ message.body }}</strong></span>
+                {{ message.date | date: 'dd MMM h:mm' }} -- <span style="color: grey; font-size: 1.2em;"><strong>{{message.author.name }} </strong></span>
+                a écrit : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #AA3939; font-size: 1.2em" class="center"><strong>{{ message.body }}</strong></span>
               </div>
             </li>
           </ul>
         </section>
         <footer>
           <form class="message-form" ng-submit="sendMessage()">
-            <input class="new-message" placeholder="Type your message here..." ng-model="newMessage" ng-trim="false" autofocus>
-        <button class="btn btn-primary">Valider</button>
+            <input class="new-message" placeholder="Type your message here..." ng-model="newMessage" ng-trim="false"
+                   autofocus>
+            <button class="btn btn-primary">Valider</button>
           </form>
         </footer>
       </div>
