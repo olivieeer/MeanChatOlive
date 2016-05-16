@@ -26,6 +26,21 @@ angular.module('chatApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/budget', {
+        templateUrl: 'partials/budget',
+        controller: 'BudgetCtrl',
+        authenticate: true
+      })
+      .when('/budget', {
+        templateUrl: 'views/budget.html',
+        controller: 'BudgetCtrl',
+        controllerAs: 'budget'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl',
+        controllerAs: 'about'
+      })
       .otherwise({
         redirectTo: '/'
       });
