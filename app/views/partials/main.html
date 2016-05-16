@@ -1,15 +1,19 @@
 <section class="chat-app">
   <div ng-include="'partials/navbar'"></div>
-  <div class="main">
-    <div class="chat">
+  <div class="main container-fluid">
+
+    <div class="chat row">
+    
+    <div class="col-sm-6 col-sm-offset-3">
       <section auto-scroll="event:scroll">
-        <ul>
-          <li ng-repeat="message in getMessages()">
-            <img class="author-profile" ng-src="{{ message.author.profileImg }}">
+        <ul class="list-group">
+          <li class="list-group-item radius" ng-repeat="message in getMessages()">
+
             <div class="message">
-              <div class="author" ng-class="{'me':currentUser.name == message.author.name}">{{ message.author.name }}</div>
+              <!--<div class="author" ng-class="{'me':currentUser.name == message.author.name}">{{ message.author.name }}</div>
               <div class="date">{{ message.date | date: 'h:mm' }}</div>
-              <div class="body">{{ message.body }}</div>
+              <div class="body">{{ message.body }}</div> <br />-->
+              {{ message.date | date: 'dd MMM h:mm' }} -- <span style="color: grey">{{message.author.name }} </span> a écrit : <span style="color: blue"> {{ message.body }}</span>
             </div>
           </li>
         </ul>
@@ -17,16 +21,20 @@
       <footer>
         <form class="message-form" ng-submit="sendMessage()">
           <input class="new-message" placeholder="Type your message here..." ng-model="newMessage" ng-trim="false" autofocus>
+      <button class="btn btn-primary">Valider</button>
         </form>
       </footer>
     </div>
-    <aside>
+    <aside>User en ligne
       <ul>
-        <li ng-repeat="visitor in getVisitors()">
-          <img class="author-profile" ng-src="{{ visitor.profileImg }}">
+        <li class="list-unstyled" ng-repeat="visitor in getVisitors()">
+
           <div class="name" ng-class="{'me':currentUser.name == visitor.name}">{{ visitor.name }}</div>
         </li>
       </ul>
     </aside>
+  </div>
+  
+  
   </div>
 </section>
