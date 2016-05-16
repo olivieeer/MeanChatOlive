@@ -4,7 +4,7 @@
 
     <div class="chat row">
     
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-offset-2 col-sm-6">
       <section auto-scroll="event:scroll">
         <ul class="list-group">
           <li class="list-group-item radius" ng-repeat="message in getMessages()">
@@ -13,7 +13,7 @@
               <!--<div class="author" ng-class="{'me':currentUser.name == message.author.name}">{{ message.author.name }}</div>
               <div class="date">{{ message.date | date: 'h:mm' }}</div>
               <div class="body">{{ message.body }}</div> <br />-->
-              {{ message.date | date: 'dd MMM h:mm' }} -- <span style="color: grey">{{message.author.name }} </span> a écrit : <span style="color: blue"> {{ message.body }}</span>
+              {{ message.date | date: 'dd MMM h:mm' }} -- <span style="color: grey; font-size: 1.2em;"><strong>{{message.author.name }} </strong></span> a écrit : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: grey; font-size: 1.2em" class="center"><strong>{{ message.body }}</strong></span>
             </div>
           </li>
         </ul>
@@ -25,16 +25,17 @@
         </form>
       </footer>
     </div>
+     <div class="col-sm-3">
     <aside>User en ligne
-      <ul>
-        <li class="list-unstyled" ng-repeat="visitor in getVisitors()">
-
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="visitor in getVisitors()">
           <div class="name" ng-class="{'me':currentUser.name == visitor.name}">{{ visitor.name }}</div>
         </li>
       </ul>
     </aside>
-  </div>
-  
+    </div>
+
+    </div>
   
   </div>
 </section>

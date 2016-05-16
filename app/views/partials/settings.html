@@ -4,8 +4,18 @@
 
     <div class="page-container">
       <div class="row">
-        <div class="col-sm-12">
+        <div class=" col-sm-offset-4 col-sm-4  col-sm-offset-4">
           <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
+          
+            <h3>Email : {{currentUser.email}}  -- name : {{currentUser.name}} -- name : {{user.name}} -- pasword:  {{user.password}}</h3>
+
+            <div class="form-group">
+              <label>User Name</label>
+
+              <input type="text" name="name" class="form-control" mongoose-error="" ng-model="currentUser.name">
+              <p class="help-block" ng-show="form.name.$error.mongoose">
+              </p>
+            </div>
 
             <div class="form-group">
               <label>Current Password</label>
@@ -137,13 +147,7 @@
 
 
 
-               <div class="form-group">
-                  <label>Current zqqzname</label>
-
-                  <input type="text" name="name" class="form-control" mongoose-error="">
-                  <p class="help-block" ng-show="form.name.$error.mongoose">
-                  </p>
-                </div>
+              
 
                 <div class="form-group">
                   <label>New Password</label>
