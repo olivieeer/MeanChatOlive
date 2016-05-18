@@ -5,6 +5,7 @@ angular.module('chatApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ngLocale',
     'btford.socket-io'
   ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
@@ -26,7 +27,7 @@ angular.module('chatApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .when('/budget', {
+      .when('/budget1', {
         templateUrl: 'partials/budget',
         controller: 'BudgetCtrl',
         authenticate: true

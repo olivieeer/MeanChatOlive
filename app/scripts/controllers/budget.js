@@ -8,10 +8,13 @@
  * Controller of the chatApp
  */
 angular.module('chatApp')
-  .controller('BudgetCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('BudgetCtrl', function ($scope, Auth, $location) {
+    $scope.essai = Auth;
+    $scope.errors = {};
+
+    if (Auth.isLoggedIn()) {
+      $location.path('/budget');
+    }
+
+
   });
